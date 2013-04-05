@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+cd $HOME/
+
+package=`find . -name package.json | head -n 1`
+
+if [ -z "$package" ]; then
+	echo "Couldn't locate package.json"
+	exit 1
+fi
+
+npm start

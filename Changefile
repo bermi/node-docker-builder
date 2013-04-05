@@ -1,0 +1,7 @@
+from	base
+run	echo 'deb http://archive.ubuntu.com/ubuntu quantal main universe multiverse' > /etc/apt/sources.list
+run	apt-get update
+run	DEBIAN_FRONTEND=noninteractive apt-get install -y -q git curl openssl
+copy	git-wrapper	/usr/local/bin/git
+copy	buildapp	/usr/local/bin/buildapp
+copy	runapp	/usr/local/bin/runapp
